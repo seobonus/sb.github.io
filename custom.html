@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><style id="themeColor"></style><meta charset="utf-8"><meta name="theme-color" content="#000000"><meta name="format-detection" content="telephone=no,email=no,adress=no"><script src="../profile.js"></script><script src="../config.js"></script><script src="../errors.js"></script><script src="../intl.js"></script><script>var getUrlParams = function (key) {
+            var search = window.location.search.split('?')[1] || '';
+            var locationParams = search ? decodeURIComponent(search).split('&') : [];
+            var paramsObj = {};
+            locationParams.forEach((_e, _i) => {
+                try {
+                    paramsObj[_e.split('=')[0]] = JSON.parse(_e.split('=')[1]);
+                } catch (err) {
+                    paramsObj[_e.split('=')[0]] = _e.split('=')[1]
+                }
+            });
+            if (key) {
+                return paramsObj[key] || ''
+            } else {
+                return paramsObj;
+            }
+        }
+        var urlParams = getUrlParams();
+        if (urlParams.nightMode) {
+            window.sessionStorage.setItem('nightModeSocket', true);
+            document.getElementsByTagName('html')[0].className = 'night_mode_dark';
+        }</script><title>DNA</title><link href="custom.d141c9b2.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="vendors.js"></script><script type="text/javascript" src="common.df976714.js"></script><script type="text/javascript" src="custom.4f4c5132.js"></script></body></html>
